@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>default</name>
+   <name>php5</name>
    <tag></tag>
-   <defaultProfile>true</defaultProfile>
+   <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://teste.transoft.com.br/sgtweb/index.php'</initValue>
+      <initValue>'http://teste.transoft.com.br:81/sgtweb/index.php'</initValue>
       <name>url</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -48,16 +48,16 @@
       <testCaseId>Test Cases/Vera Cruz/Consulta Viagens Realizadas Documento 464162 em 11-06-2021</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>736a50e9-ffd5-4b96-8dea-ed92a952c781</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Vera Cruz/Fechamento Operacional 11-06-2021</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>9af08c40-9599-4e55-aa88-e521e202df16</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Vera Cruz/Fechamento Financeiro 11-06-2021</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>736a50e9-ffd5-4b96-8dea-ed92a952c781</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Vera Cruz/Fechamento Operacional 11-06-2021</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>43000f6a-43f8-444e-8c1b-67180b62e873</guid>

@@ -32,7 +32,7 @@ WebUI.openBrowser('https://www.google.com/')
 def driver = DriverFactory.getWebDriver()
 String baseUrl = "https://www.google.com/"
 selenium = new WebDriverBackedSelenium(driver, baseUrl)
-selenium.open("http://teste.transoft.com.br/sgtweb/index.php")
+selenium.open(GlobalVariable.url)
 selenium.click("link=Login Suporte.")
 selenium.type("id=edtUsuario", "edson")
 selenium.type("id=edtSenha", "ed021061")
@@ -77,11 +77,12 @@ selenium.click("name=csAtualizaKmRodada")
 selenium.click("id=MetodoOperacional")
 selenium.select("id=MetodoOperacional", "label=Balanceamento")
 selenium.click("id=MetodoOperacional")
+selenium.setTimeout("600000")
 selenium.click("link=Executar Fechamento")
 
-// Verifica se o fechamento foi concluído
+// Verifica se o fechamento foi concluído em até 10 minutos
 for (int second = 0;; second++) {
-	if (second >= 180) fail("timeout");
+	if (second >= 600) fail("timeout");
 	try { if (selenium.isElementPresent("//div[@id='comunicacao']/div")) break; } catch (Exception e) {}
 	Thread.sleep(1000);
 }

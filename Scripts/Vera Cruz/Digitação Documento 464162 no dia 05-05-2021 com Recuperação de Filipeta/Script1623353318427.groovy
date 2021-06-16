@@ -33,7 +33,7 @@ WebUI.openBrowser('https://www.google.com/')
 def driver = DriverFactory.getWebDriver()
 String baseUrl = "https://www.google.com/"
 selenium = new WebDriverBackedSelenium(driver, baseUrl)
-selenium.open("http://teste.transoft.com.br/sgtweb/index.php?c=controleAcesso.CLogin&m=verTelaLogin")
+selenium.open(GlobalVariable.url)
 selenium.click("link=Login Suporte.")
 selenium.type("id=edtUsuario", "edson")
 selenium.type("id=edtSenha", "ed021061")
@@ -86,7 +86,7 @@ selenium.typeKeys("name=nrDocumento", Keys.chord(Keys.ENTER))
 
 selenium.typeKeys("name=pesquisa", Keys.chord(Keys.ENTER))
 
-Thread.sleep(3000);
+Thread.sleep(5000);
 
 //Verifica se a filipeta foi localizada
 def nrOrdemEquipamento = selenium.getValue('name=arRolHod6[]')

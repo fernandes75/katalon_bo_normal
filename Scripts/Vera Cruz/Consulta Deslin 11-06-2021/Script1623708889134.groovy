@@ -32,7 +32,7 @@ WebUI.openBrowser('https://www.google.com/')
 def driver = DriverFactory.getWebDriver()
 String baseUrl = "https://www.google.com/"
 selenium = new WebDriverBackedSelenium(driver, baseUrl)
-selenium.open("http://teste.transoft.com.br/sgtweb/")
+selenium.open(GlobalVariable.url)
 selenium.click("link=Login Suporte.")
 selenium.type("id=edtUsuario", "edson")
 selenium.type("id=edtSenha", "ed021061")
