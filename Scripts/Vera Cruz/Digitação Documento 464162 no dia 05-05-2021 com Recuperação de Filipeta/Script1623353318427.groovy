@@ -86,7 +86,7 @@ selenium.typeKeys("name=nrDocumento", Keys.chord(Keys.ENTER))
 
 selenium.typeKeys("name=pesquisa", Keys.chord(Keys.ENTER))
 
-Thread.sleep(5000);
+Thread.sleep(10000);
 
 //Verifica se a filipeta foi localizada
 def nrOrdemEquipamento = selenium.getValue('name=arRolHod6[]')

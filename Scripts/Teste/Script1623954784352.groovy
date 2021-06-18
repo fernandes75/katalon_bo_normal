@@ -27,67 +27,44 @@ import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium
 import static org.junit.Assert.*
 import java.util.regex.Pattern
 import static org.apache.commons.lang3.StringUtils.join
-import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('https://www.google.com/')
 def driver = DriverFactory.getWebDriver()
 String baseUrl = "https://www.google.com/"
 selenium = new WebDriverBackedSelenium(driver, baseUrl)
-selenium.open(GlobalVariable.url)
+selenium.open("http://teste.transoft.com.br/sgtweb/index.php")
 selenium.click("link=Login Suporte.")
-selenium.type("id=edtUsuario", "edson")
-selenium.type("id=edtSenha", "ed021061")
-selenium.select("id=edtConexao", "label=valorambiental")
-selenium.select("id=edtConexao", "label=vera")
-selenium.click("//input[@value='ENTRAR']")
-
+selenium.type("id=edtUsuario", "andre")
+selenium.type("id=edtSenha", "pedro1211")
+selenium.select("id=edtConexao", "label=realnortero")
+selenium.select("id=edtConexao", "label=rioita")
+selenium.click("xpath=//input[@value='ENTRAR']")
 for (int second = 0;; second++) {
 	if (second >= 60) fail("timeout");
 	try { if (selenium.isElementPresent("link=Módulos")) break; } catch (Exception e) {}
 	Thread.sleep(1000);
 }
-
+selenium.click("xpath=//button[@onclick='concordoPrivacidade();']");
+Thread.sleep(1000);
 selenium.click("link=Módulos")
-
 for (int second = 0;; second++) {
 	if (second >= 60) fail("timeout");
-	try { if (selenium.isElementPresent("link=Tráfego / Arrecadação")) break; } catch (Exception e) {}
+	try { if (selenium.isElementPresent("link=Ponto / Escala")) break; } catch (Exception e) {}
 	Thread.sleep(1000);
 }
-
-selenium.click("link=Tráfego / Arrecadação")
-
+selenium.click("link=Ponto / Escala")
 for (int second = 0;; second++) {
 	if (second >= 60) fail("timeout");
-	try { if (selenium.isElementPresent("link=Movimentação")) break; } catch (Exception e) {}
+	try { if (selenium.isElementPresent("link=Cadastros")) break; } catch (Exception e) {}
 	Thread.sleep(1000);
 }
-
-selenium.click("link=Movimentação")
-selenium.click("link=Digitacao de Documentos")
-selenium.click("link=Digitação Boletim Normal")
-
+selenium.click("link=Cadastros")
+selenium.click("link=Tabelas")
+selenium.click("xpath=//div[@id='navigationDiv']/ul/li/ul/li[3]/ul/li/a")
+selenium.click("link=Tipos de Escala")
 for (int second = 0;; second++) {
 	if (second >= 60) fail("timeout");
-	try { if (selenium.isElementPresent("name=nrDocumento")) break; } catch (Exception e) {}
+	try { if (selenium.isElementPresent("link=Pesquisar")) break; } catch (Exception e) {}
 	Thread.sleep(1000);
 }
-
-Thread.sleep(5000);
-
-selenium.type("name=idEmpresa", "001")
-selenium.typeKeys("name=idEmpresa", Keys.chord(Keys.ENTER))
-selenium.type("name=dtOperacao", "05/05/2021")
-selenium.typeKeys("name=dtOperacao", Keys.chord(Keys.ENTER))
-
-Thread.sleep(5000);
-
-selenium.type("name=nrDocumento", "464162")
-selenium.typeKeys("name=nrDocumento", Keys.chord(Keys.ENTER))
-selenium.typeKeys("name=pesquisa", Keys.chord(Keys.ENTER))
-
-Thread.sleep(4000);
-
-selenium.click("link=Exclui")
-
-Thread.sleep(10000);
+selenium.click("link=Pesquisar")
